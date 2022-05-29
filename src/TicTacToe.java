@@ -1,14 +1,20 @@
 public class TicTacToe {
-
+    // Erstellen von Variablen für die Spalten, Reihen und einer 2D Array
     public static final int ROWS = 3;
     public static final int COLUMNS = 3;
     public static String[][] board;
 
+
+    /**
+     * Erstellen einer Konstruktor für das Initialisieren der Spalten und Reihen*/
     public TicTacToe(){
         board = new String[ROWS][COLUMNS];
     }
 
 
+    /**
+     * Initialisieren des Spielbretts
+     */
     public void initBoard() {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
@@ -18,6 +24,9 @@ public class TicTacToe {
     }
 
 
+    /**
+     * Das Spielbrett auf die Konsole Printen
+     */
    public String printBoard() {
         String strBoard = "";
         for (int i =0; i < ROWS; i++){
@@ -35,6 +44,9 @@ public class TicTacToe {
    }
 
 
+    /**
+     * Eine Methode für den Ablauf der Spielvorgang
+     **/
    public boolean setPlay(int i, int j, String player){ // i = zeilenindex, j = spaltenindex, player = symbol(x, o)
         if (board[i][j].equals("   ")) {
             board[i][j] = player;
@@ -45,6 +57,9 @@ public class TicTacToe {
        return false;
    }
 
+
+   /**
+    * Regelt welcher Spieler dran ist*/
     public String getPlayer(String player){
        if(player.equals(" X ")){
            player = " O ";
@@ -55,6 +70,9 @@ public class TicTacToe {
         return player;
     }
 
+
+    /**
+     * Überprüft, ob wer Gewonnen hat oder es ein Unentschieden ist*/
     public boolean isGameOver() {
         // Zeile überprüfen
         for (int i = 0; i < ROWS; i++) {
@@ -72,6 +90,7 @@ public class TicTacToe {
         if (!board[0][0].equals("   ")&& board[0][0].equals(board[1][1]) && board[1][1].equals(board[2][2])){
             return true;
         }
+        //Diagonale / überprüfung
         if (!board[0][2].equals("   ")&& board[0][2].equals(board[1][1]) && board[1][1].equals(board[2][0])){
         return true;
         }

@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 public class Main {
-
-
     public static void main(String[] args) {
         TicTacToe game = new TicTacToe();
         game.initBoard();
         String player = " O ";
         System.out.println(game.printBoard());
+
+        // Eine State Maschine für Durchführen des gesamten Spiels bis Spielende
         while (true) {
             int row = getRow();
             int column = getColumn();
@@ -26,7 +26,9 @@ public class Main {
         }
     }
 
-
+    /**
+     * Eine Methode für die Eingabe der Reihe auf dem Spielfeld
+     */
     public static int getRow(){
         Scanner sc1 = new Scanner(System.in);
         while(true) {
@@ -46,6 +48,9 @@ public class Main {
     }
 
 
+    /**
+     * Eine Methode für die Eingabe der Spalte auf dem Spielfeld
+     */
     public static int getColumn(){
         Scanner sc1 = new Scanner(System.in);
         while(true) {
@@ -64,6 +69,10 @@ public class Main {
         }
     }
 
+
+    /**
+     * Überprüft das eingegebene auf einem Zahl(String) und wandelt es zu einem Integer
+     */
     public static int checkStringNumeric(String input) {
         int num;
         try {
