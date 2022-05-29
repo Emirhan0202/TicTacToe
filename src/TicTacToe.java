@@ -59,7 +59,8 @@ public class TicTacToe {
 
 
    /**
-    * Regelt welcher Spieler dran ist*/
+    * Regelt welcher Spieler dran ist
+    */
     public String getPlayer(String player){
        if(player.equals(" X ")){
            player = " O ";
@@ -72,7 +73,8 @@ public class TicTacToe {
 
 
     /**
-     * Überprüft, ob wer Gewonnen hat oder es ein Unentschieden ist*/
+     * Überprüft, ob wer Gewonnen hat oder es ein Unentschieden ist
+     */
     public boolean isGameOver() {
         // Zeile überprüfen
         for (int i = 0; i < ROWS; i++) {

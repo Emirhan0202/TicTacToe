@@ -26,6 +26,7 @@ public class Main {
         }
     }
 
+
     /**
      * Eine Methode für die Eingabe der Reihe auf dem Spielfeld
      */
